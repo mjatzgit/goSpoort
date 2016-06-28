@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GoSpoort</title>
+  <meta name="description" content="GoSpoort Test.
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="icon" href="/assets/favicon.png">
+
+  <link href="/assets/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <div ng-app="gospoort" ng-controller="FilterController" ng-cloak>
+        <header>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+      
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="#">Features</a></li>
+            <li><a href="#">Testimonial</a></li>
+            <li><a href="#">Contact</a></li>
+             
+          </ul>
+         
+      </div> 
+    </nav>
+
+</header>
+
+
+        <div class="message text-center">Find Trainers to match your needs</div>
+
+        <div class="content container">
+            <div class="row">
+                
+                <div class="col-sm-12">
+                    
+<div class="search-status">
+    <span class="prefix">SEARCH</span>
+    <i class="bullet"></i>
+    <span class="result">{{ trainers.length }} Coaches</span>
+    <span class="suffix">match yourt search</span>
+</div>
+
+
+                </div>
+
+                <div class="col-sm-9">
+                    
+<div class="search-results">
+	<div class="row">
+ 
+		 
+		<div class="col-sm-6" ng-repeat="trainer in trainers | filter:filterDisciplines( selectedDisciplines )">
+
+			<div class="trainee-card">
+				 
+					<div class="portrait">
+						<img class="img-circle" src="{{trainer.picture}}">
+					</div>
+					<div class="trainee-info">
+						<h3>{{trainer.name}}</h3>
+						<div class="disciplines" ng-repeat="discipline in trainer.discipline track by $index">
+							{{discipline}}
+						</div>
+				
+						<div class="price"><i></i>{{trainer.price}}</div>
+						<div class="distance"><i></i>{{trainer.distance}}</div>
+					</div>
+					
+					<div class="details">view details</div>
+			
+			</div>
+		</div>
+	
+	</div>
+
+</div>
+
+                </div>
+
+                <div class="col-sm-3">
+                    
+<div class="search-filter">
+
+	<div class="location">
+		<div class="title">LOCATION</div>
+		<div class="item" ng-repeat="item in location">
+		    <div class="checkbox ">
+	 			<span><i class="checked">&#10003;</i></span>
+		        {{ item }}                  
+		    </div>        
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="sportstype">
+		<div class="title">SPORTS TYPE</div>
+		<div class="item" ng-repeat="item in disciplines">
+
+			<input type="checkbox" ng-checked="exists(item, selectedDisciplines)" ng-click="toggleDisciplines(item, selectedDisciplines)">
+			<label> {{ item }} </label>
+
+		    <!-- <div ng-click="toggleDisciplines(item)" class="checkbox">
+		        <span><i>&#10003;</i></span>
+		      {{ item }}                
+		    </div>         -->
+		</div>
+	</div>
+
+</div>
+
+                </div>
+
+            </div>
+        </div>
+
+      <footer>
+	<nav >
+		<ul class="text-center" >
+			<li><a href="#">Overview</a></li>
+			<li><a href="#">Privacy Policy</a></li>
+			<li><a href="#">Cookie Policy</a></li>
+		    <li><a href="#">Terms</a></li>
+	    </ul>
+	</nav>
+	<div class="text-center">2016 companyname. All right reserved.</div>
+</footer>
+
+<script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.5.5/angular-sanitize.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+ -->
+
+<script src="https://code.angularjs.org/1.5.5/angular-animate.js"></script>
+
+<script src="/js/angular-bootstrap.js"></script>
+<script src="/js/angular-scripts.js"></script>
+<script src="/js/app.js"></script>
+
+  </div>
+</body>
+
+</html>

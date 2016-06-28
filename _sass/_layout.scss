@@ -1,0 +1,233 @@
+/**
+ * Site header
+ */
+
+// nav.navbar{
+//     background-color: rgba(0, 0, 0, 0);
+//     border-color: rgba(0, 0, 0, 0);
+//     ul.nav {
+//         list-style-type: disc;
+//         li{
+//             display: list-item;
+//             padding-right: 25px;
+
+//             &:first-child{
+//                 display: block; // hides the list style
+//             }
+//             a{ color: grey;}
+//             &.active > a{ color:#333 }
+//             &.active > a, &.active > a:focus, &.active > a:hover{
+//                 background-color: rgba(0, 0, 0, 0);
+//             }
+
+//             a{}
+//         }
+//     }
+// }
+nav.navbar{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    margin: 15px 0;
+
+    ul.nav {
+        list-style: none;
+        padding:0;
+        margin:0;
+        li{
+            position: relative;
+            
+            a{ 
+                font-size: 12px;
+                color: $grey-color; 
+                padding-left: 20px;
+                padding-right: 20px;
+
+            }
+
+            &:before {
+                content: "• ";
+                color: #b9bfd7; 
+                position: absolute;
+                top: 15px;
+                left: -3px;
+            }
+
+            &:first-child:before{
+                display: none; // hides the list style
+            }
+            
+            &.active > a{ color:#333 }
+            &.active > a, &.active > a:focus, &.active > a:hover{
+                background-color: rgba(0, 0, 0, 0);
+            }
+        }
+    }
+}
+
+.message{
+    font-size: 18px;
+    color: #fff;
+    background-color: $brand-color;
+    line-height: 60px;
+    height: 60px;
+    font-weight: 300;
+}
+
+.search-status{
+    margin: 15px 0;
+
+    span.prefix{ color: #2eb0ea; } 
+
+    span.result{ color: $text-color; } 
+
+    span.suffix{ color: $grey-color; }
+
+    i.bullet{
+        position: relative;
+        padding-left: 20px;
+
+        &:before {
+            content: "• ";
+            color: #b9bfd7; 
+            position: absolute;
+            top: -2px;
+            left: 3px;
+        }
+    }
+}
+
+.search-filter{
+    background-color: #47506d;
+    padding: 30px;
+    color: #eee;
+    font-size: 12px;
+    .title{
+        font-size: 11px;
+    }
+    
+    .item{
+        margin-right: 20px;
+        
+        .checkbox{
+            padding-left: 25px;
+      
+            span{
+                position: absolute;
+                left: 0;
+                top: 0px;
+                height: 15px;
+                width: 15px;
+                background-color: #2eb0ea;
+                border-radius: 3px;
+            
+                i{
+                    display: none;
+                    position:absolute;
+                    left: 2px;
+
+                    &.checked{ display: block; }
+                }
+            }
+        }        
+    }
+    .location .item{ display: inline-block; }
+}
+
+
+.search-results{
+    margin-top: 25px;
+    .trainee-card{
+        background-color: #fff;
+        border: 1px solid rgba(164, 172, 183, 0.3);
+        margin-bottom: 30px;
+        padding: 20px 15px 10px;
+        height: 200px;
+        transition: 0.3s all;
+
+        &:hover{
+            box-shadow: 0px 0px 20px rgba(136, 136, 136, 0.46);
+
+            div.details{
+                background-color: $green-color;
+                color: #fff;
+            }
+
+        }
+        
+        .portrait {
+            width: 60px;
+            height: 120px;
+            margin-right: 15px;
+            float: left;
+
+            img{
+                width: 100%;
+               
+            }
+        }
+        .trainee-info{
+            float: left;
+
+            h3{ 
+                margin-top: 10px;
+                margin-bottom: 2px;
+                font-size: 18px;
+                font-weight: 400;
+            }
+
+            .disciplines{
+                float: left;
+                margin-right: 5px;
+                color: $grey-color;
+
+            }
+            .price, .distance{
+                float: left;
+                width: 50%;
+                margin-top: 20px;
+                
+            }
+        }
+        div.details{
+            clear:both;
+            border-radius: 3px;
+            font-size: 20px;
+            font-weight: 300;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px;
+            display: block;
+            width: 100%;
+            transition: 0.3s all;
+            border: 2px solid $green-color;
+            background-color: #fff;
+            color: $green-color;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+    }
+}
+
+footer{
+    margin-top: 100px;
+    color: $grey-color;
+    font-size: 10px;
+    margin-bottom: 20px;
+    nav ul{
+
+        li{
+            display: inline-block;
+
+            a, a:visited{
+                color: $grey-color;
+                font-size: 10px;
+                padding: 0 10px 
+            }
+
+            a:hover{
+                color: $text-color;
+            }
+            &:first-child a{ padding-left: 0;}
+        }
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+    <div ng-app="gospoort" ng-controller="FilterController" ng-cloak>
+        {% include header.html %}
+
+        {% include message-bar.html %}
+
+        <div class="content container">
+            <div class="row">
+                
+                <div class="col-sm-12">
+                    {% include search-status.html %}
+                </div>
+
+                <div class="col-sm-9">
+                    {% include search-results.html %}
+                </div>
+
+                <div class="col-sm-3">
+                    {% include search-filter.html %}
+                </div>
+
+            </div>
+        </div>
+
+      {% include footer.html %}
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "gospoort",
+  "version": "0.0.1",
+  "description": "test for gospoort",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjatzgit/gospoort.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjatzgit/gospoort/issues"
+  },
+  "homepage": "https://github.com/mjatzgit/gospoort",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1"
+  }
+}

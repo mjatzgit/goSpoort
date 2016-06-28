@@ -1,0 +1,31 @@
+{% raw %}
+<div class="search-filter">
+
+	<div class="location">
+		<div class="title">LOCATION</div>
+		<div class="item" ng-repeat="item in location">
+		    <div class="checkbox ">
+	 			<span><i class="checked">&#10003;</i></span>
+		        {{ item }}                  
+		    </div>        
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="sportstype">
+		<div class="title">SPORTS TYPE</div>
+		<div class="item" ng-repeat="item in disciplines">
+
+			<input type="checkbox" ng-checked="exists(item, selectedDisciplines)" ng-click="toggleDisciplines(item, selectedDisciplines)">
+			<label> {{ item }} </label>
+
+		    <!-- <div ng-click="toggleDisciplines(item)" class="checkbox">
+		        <span><i>&#10003;</i></span>
+		      {{ item }}                
+		    </div>         -->
+		</div>
+	</div>
+
+</div>
+{% endraw %}

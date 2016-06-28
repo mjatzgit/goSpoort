@@ -1,0 +1,31 @@
+{% raw %}
+<div class="search-results">
+	<div class="row">
+ 
+		 
+		<div class="col-sm-6" ng-repeat="trainer in trainers | filter:filterDisciplines( selectedDisciplines )">
+
+			<div class="trainee-card">
+				 
+					<div class="portrait">
+						<img class="img-circle" src="{{trainer.picture}}">
+					</div>
+					<div class="trainee-info">
+						<h3>{{trainer.name}}</h3>
+						<div class="disciplines" ng-repeat="discipline in trainer.discipline track by $index">
+							{{discipline}}
+						</div>
+				
+						<div class="price"><i></i>{{trainer.price}}</div>
+						<div class="distance"><i></i>{{trainer.distance}}</div>
+					</div>
+					
+					<div class="details">view details</div>
+			
+			</div>
+		</div>
+	
+	</div>
+
+</div>
+{% endraw %}
